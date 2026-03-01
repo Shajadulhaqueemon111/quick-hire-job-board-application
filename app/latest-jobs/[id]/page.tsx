@@ -4,16 +4,16 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 
 import { Syne, DM_Sans } from "next/font/google";
-import { featuredJobsData } from "@/app/data/data";
+import { latestJobsData } from "@/app/data/data";
 import JobDetailUI from "@/app/components/job-details";
 
 const syne = Syne({ subsets: ["latin"], weight: ["700", "800"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const FeaturedJobDetailPage = () => {
+const LatestJobDetailPage = () => {
   const params = useParams();
   const jobId = Number(params?.id);
-  const job = featuredJobsData[jobId];
+  const job = latestJobsData[jobId];
 
   if (!job) {
     return (
@@ -41,4 +41,4 @@ const FeaturedJobDetailPage = () => {
   return <JobDetailUI job={job} />;
 };
 
-export default FeaturedJobDetailPage;
+export default LatestJobDetailPage;

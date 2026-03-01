@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const categories = [
@@ -256,8 +257,8 @@ const CategorySection = () => {
           Explore by <span className="text-[#3b82f6]">category</span>
         </h2>
         {/* Show all jobs — desktop only in header */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="hidden md:flex items-center gap-2 text-indigo-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
         >
           Show all jobs
@@ -275,7 +276,7 @@ const CategorySection = () => {
               d="M5 12h14M12 5l7 7-7 7"
             />
           </svg>
-        </a>
+        </Link>
       </div>
 
       {/* ── DESKTOP: 4-column grid, cards vertical ── */}

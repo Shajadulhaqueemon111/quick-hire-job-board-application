@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo1 from "../../public/image/latest-job-logo/latest-job-logo-1.png";
 import logo2 from "../../public/image/latest-job-logo/latest-job-logo2.png";
 import logo3 from "../../public/image/latest-job-logo/latest-job-logo3.png";
@@ -11,7 +12,7 @@ import logo8 from "../../public/image/latest-job-logo/latest-job-logo8.png";
 
 const jobs = [
   {
-    id: 1,
+    id: 9,
     logo: logo1,
     title: "Social Media Assistant",
     company: "Nomad",
@@ -26,7 +27,7 @@ const jobs = [
     ],
   },
   {
-    id: 2,
+    id: 10,
     logo: logo2,
     title: "Social Media Assistant",
     company: "Netlify",
@@ -41,7 +42,7 @@ const jobs = [
     ],
   },
   {
-    id: 3,
+    id: 11,
     logo: logo3,
     title: "Brand Designer",
     company: "Dropbox",
@@ -56,7 +57,7 @@ const jobs = [
     ],
   },
   {
-    id: 4,
+    id: 12,
     logo: logo4,
     title: "Brand Designer",
     company: "Maze",
@@ -71,7 +72,7 @@ const jobs = [
     ],
   },
   {
-    id: 5,
+    id: 13,
     logo: logo5,
     title: "Interactive Developer",
     company: "Terraform",
@@ -86,7 +87,7 @@ const jobs = [
     ],
   },
   {
-    id: 6,
+    id: 14,
     logo: logo6,
     title: "Interactive Developer",
     company: "Udacity",
@@ -101,7 +102,7 @@ const jobs = [
     ],
   },
   {
-    id: 7,
+    id: 15,
     logo: logo7,
     title: "HR Manager",
     company: "Packer",
@@ -116,7 +117,7 @@ const jobs = [
     ],
   },
   {
-    id: 8,
+    id: 16,
     logo: logo8,
     title: "HR Manager",
     company: "Webflow",
@@ -225,9 +226,10 @@ const LatestJobs = () => {
       {/* 2-column grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {jobs.map((job) => (
-          <div
+          <Link
             key={job.id}
-            className="bg-white border border-gray-200 rounded-2xl w-full h-[149px] px-8 py-6 flex items-center gap-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer"
+            href={`/latest-jobs/${job.id}`}
+            className="bg-white border border-gray-200 rounded-2xl w-full h-[149px] px-8 py-6 flex items-center gap-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer group"
           >
             {/* Logo */}
             <div className="w-16 h-16 shrink-0 rounded-2xl overflow-hidden flex items-center justify-center">
@@ -242,7 +244,7 @@ const LatestJobs = () => {
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-base font-bold text-gray-900 mb-1">
+              <h3 className="text-base font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors duration-200">
                 {job.title}
               </h3>
               <p className="text-sm text-gray-400 mb-3">
@@ -262,7 +264,7 @@ const LatestJobs = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

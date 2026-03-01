@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo0 from "../../public/image/Featured-job-logo/Company-Logo.png";
 import logo1 from "../../public/image/Featured-job-logo/CompanyLogo1.png";
 import logo2 from "../../public/image/Featured-job-logo/CompanyLogo2.png";
@@ -141,9 +142,10 @@ const FeaturedJobs = () => {
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {jobs.map((job) => (
-          <div
+          <Link
             key={job.id}
-            className="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer flex flex-col gap-3"
+            href={`/jobs/${job.id}`}
+            className="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer flex flex-col gap-3 group"
           >
             {/* Top row: logo + type badge */}
             <div className="flex items-center justify-between">
@@ -163,7 +165,9 @@ const FeaturedJobs = () => {
 
             {/* Title */}
             <div>
-              <h3 className="text-base font-bold text-gray-900">{job.title}</h3>
+              <h3 className="text-base font-bold text-gray-900 group-hover:text-indigo-600 transition-colors duration-200">
+                {job.title}
+              </h3>
               <p className="text-sm text-gray-400 mt-0.5">
                 {job.company}
                 <span className="mx-1.5 text-gray-300">·</span>
@@ -187,7 +191,7 @@ const FeaturedJobs = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
