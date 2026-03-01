@@ -11,28 +11,29 @@ const Navbar = () => {
     <nav className="w-full bg-white shadow-sm">
       <div className="px-6 md:px-10 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center overflow-hidden">
-            <Image
-              src={quickHirelogo}
-              alt="quick-hire"
-              width={50}
-              height={50}
-            />
+        <Link href="/">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center overflow-hidden">
+              <Image
+                src={quickHirelogo}
+                alt="quick-hire"
+                width={50}
+                height={50}
+              />
+            </div>
+            <span className="text-xl font-bold text-gray-900 tracking-tight">
+              QuickHire
+            </span>
           </div>
-          <span className="text-xl font-bold text-gray-900 tracking-tight">
-            QuickHire
-          </span>
-        </div>
-
+        </Link>
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
-          <a
-            href="#"
+          <Link
+            href="/job-list"
             className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"
           >
             Find Jobs
-          </a>
+          </Link>
           <a
             href="#"
             className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"

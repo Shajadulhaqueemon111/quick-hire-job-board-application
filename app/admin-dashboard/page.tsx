@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Header from "./header/page";
 
-// ── Sparkline mini chart (SVG) ────────────────────────────────
 function Sparkline({
   data,
   color,
@@ -39,7 +39,6 @@ function Sparkline({
   );
 }
 
-// ── Bar Chart ─────────────────────────────────────────────────
 function BarChart({
   data,
 }: {
@@ -232,7 +231,6 @@ function DonutChart({
   );
 }
 
-// ── Animated Counter ──────────────────────────────────────────
 function Counter({ to, duration = 1200 }: { to: number; duration?: number }) {
   const [val, setVal] = useState(0);
   useEffect(() => {
@@ -650,6 +648,7 @@ export default function DashboardPage() {
 
       <div className="db-wrap">
         {/* ── Welcome Banner ── */}
+
         <div className="welcome-banner">
           <div>
             <p className="wb-greeting">Admin Dashboard</p>
