@@ -144,7 +144,8 @@ const FeaturedJobs = () => {
         {jobs.map((job) => (
           <Link
             key={job.id}
-            href={`/jobs/${job.id}`}
+            // href={`/jobs/${job.id}`}
+            href={"/"}
             className="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer flex flex-col gap-3 group"
           >
             {/* Top row: logo + type badge */}

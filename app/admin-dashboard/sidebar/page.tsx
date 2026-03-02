@@ -117,7 +117,11 @@ const navItems = [
   { name: "Dashboard", path: "/admin-dashboard", icon: <IconHome /> },
   { name: "Add Job", path: "/admin-dashboard/add-job", icon: <IconPlus /> },
   { name: "All Jobs", path: "/admin-dashboard/all-jobs", icon: <IconList /> },
-  { name: "Users", path: "/admin-dashboard/users", icon: <IconUsers /> },
+  {
+    name: "All Applications",
+    path: "/admin-dashboard/all-job-applications",
+    icon: <IconUsers />,
+  },
   { name: "Statistics", path: "/admin-dashboard/stats", icon: <IconStats /> },
 ];
 

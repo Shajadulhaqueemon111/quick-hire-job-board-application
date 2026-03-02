@@ -127,7 +127,7 @@ const HeroSection = () => {
               <option>Dhaka, Bangladesh</option>
             </select>
             {/* Chevron */}
-            <svg
+            {/* <svg
               className="w-4 h-4 text-gray-400 shrink-0"
               fill="none"
               stroke="currentColor"
@@ -139,7 +139,7 @@ const HeroSection = () => {
                 strokeLinejoin="round"
                 d="M19 9l-7 7-7-7"
               />
-            </svg>
+            </svg> */}
           </div>
 
           {/* Search Button — fills the right portion, respects 16px padding */}

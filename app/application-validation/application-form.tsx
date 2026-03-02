@@ -23,7 +23,6 @@ type FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
-// ── Same logic as Zod z.string().url() ──────────────────────
 function isValidUrl(str: string): boolean {
   try {
     const url = new URL(str);
@@ -33,11 +32,8 @@ function isValidUrl(str: string): boolean {
   }
 }
 
-// ── Mirrors your backend createApplicationValidationSchema ───
 function validate(form: FormState): FormErrors {
   const errors: FormErrors = {};
-
-  // jobId validated separately (from URL param)
 
   // name: z.string().min(1)
   if (!form.name.trim()) errors.name = "Name is required";
@@ -57,7 +53,6 @@ function validate(form: FormState): FormErrors {
   return errors;
 }
 
-// ── Input component ──────────────────────────────────────────
 function Field({
   label,
   required,
@@ -107,7 +102,6 @@ function inputClass(hasError: boolean) {
   }`;
 }
 
-// ── Main component ───────────────────────────────────────────
 export const ApplyForm: React.FC<Props> = ({ jobId, jobTitle, company }) => {
   const [submitApplication, { isLoading }] = useSubmitApplicationMutation();
 

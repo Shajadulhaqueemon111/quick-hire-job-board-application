@@ -96,7 +96,7 @@ const JobList: React.FC = () => {
 
       {/* 🔥 No Results Found UI */}
       {filteredJobs.length === 0 ? (
-        <div className="flex flex-col items-center mx-auto justify-center py-20 text-center">
+        <div className="flex flex-col items-center  justify-center py-20 text-center">
           <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-5">
             <svg
               className="w-10 h-10 text-indigo-300"

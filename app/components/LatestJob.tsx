@@ -228,7 +228,8 @@ const LatestJobs = () => {
         {jobs.map((job) => (
           <Link
             key={job.id}
-            href={`/latest-jobs/${job.id}`}
+            // href={`/latest-jobs/${job.id}`}
+            href={"/"}
             className="bg-white border border-gray-200 rounded-2xl w-full h-[149px] px-8 py-6 flex items-center gap-5 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer group"
           >
             {/* Logo */}

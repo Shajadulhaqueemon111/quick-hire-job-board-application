@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#### QuickHire – Mini Job Board Application
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+QuickHire is a simple job board application built with Next.js for the frontend and Node.js/Express for the backend. It allows users to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1)Browse and search job listings
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2)Filter jobs by category and location
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3)View detailed job descriptions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4)Apply for jobs via a simple application form
 
-## Learn More
+5)Admin users can post and delete jobs
 
-To learn more about Next.js, take a look at the following resources:
+The UI closely follows the Figma design template:
+Figma QuickHire Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Frontend (Next.js)
 
-## Deploy on Vercel
+Job Listings Page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Display all jobs in a clean, responsive grid
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Search jobs by title
+
+Filter jobs by category and location
+
+Job Details Page
+
+Show full job description
+
+"Apply Now" form including:
+
+Name
+
+Email
+
+Resume link (URL)
+
+Cover note
+
+Admin Panel
+
+Add new jobs
+
+Delete jobs
+
+Responsive UI
+
+State Management
+
+# Redux Toolkit + RTK Query for API data fetching
+
+UI
+
+Tailwind CSS for styling and using and design
+
+Responsive, clean, and professional layout
+
+Reusable components

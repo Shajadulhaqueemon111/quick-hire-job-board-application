@@ -1,3 +1,5 @@
+import { IApplication, IApplicationsResponse } from "@/app/types/applications";
+import { IJob } from "@/app/types/jobs";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
@@ -51,6 +53,36 @@ export const baseApi = createApi({
       },
       providesTags: ["Jobs"],
     }),
+
+    createJob: builder.mutation<IJob, Omit<IJob, "_id" | "createdAt">>({
+      query: (job) => ({
+        url: "/jobs/create-job",
+        method: "POST",
+        body: job,
+      }),
+      invalidatesTags: ["Jobs"],
+    }),
+    deleteJob: builder.mutation<{ success: boolean; id: string }, string>({
+      query: (id) => ({
+        url: `/jobs/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Jobs"],
+    }),
+    deleteApplication: builder.mutation<
+      { success: boolean; id: string },
+      string
+    >({
+      query: (id) => ({
+        url: `/applications/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Applications"],
+    }),
+    getAllApplications: builder.query<IApplicationsResponse, void>({
+      query: () => "/applications",
+      providesTags: ["Applications"],
+    }),
   }),
 });
 
@@ -59,4 +91,8 @@ export const {
   useGetJobByIdQuery,
   useSubmitApplicationMutation,
   useLazySearchJobsQuery,
+  useCreateJobMutation,
+  useDeleteJobMutation,
+  useDeleteApplicationMutation,
+  useGetAllApplicationsQuery,
 } = baseApi;
