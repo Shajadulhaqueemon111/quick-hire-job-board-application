@@ -31,6 +31,26 @@ export const baseApi = createApi({
       }),
       invalidatesTags: ["Applications"],
     }),
+    searchJobs: builder.query({
+      query: ({
+        keyword,
+        category,
+        location,
+      }: {
+        keyword?: string;
+        category?: string;
+        location?: string;
+      }) => {
+        const params = new URLSearchParams();
+
+        if (keyword) params.append("keyword", keyword);
+        if (category) params.append("category", category);
+        if (location) params.append("location", location);
+
+        return `/jobs/search?${params.toString()}`;
+      },
+      providesTags: ["Jobs"],
+    }),
   }),
 });
 
@@ -38,4 +58,5 @@ export const {
   useGetJobsQuery,
   useGetJobByIdQuery,
   useSubmitApplicationMutation,
+  useLazySearchJobsQuery,
 } = baseApi;

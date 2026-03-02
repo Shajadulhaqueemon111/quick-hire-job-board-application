@@ -285,119 +285,124 @@ const Sidebar = () => {
       `}</style>
 
       {/* ══ Collapsed Icon Strip (always visible, sm + lg) ══ */}
-      <aside className="qs-sidebar">
-        {/* Logo */}
-        <div
-          className="qs-logo-wrap"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "18px 0",
-            borderBottom: "1px solid rgba(255,255,255,0.07)",
-            width: "100%",
-          }}
-        >
+      <Link href={"/"}>
+        <aside className="qs-sidebar">
+          {/* Logo */}
           <div
+            className="qs-logo-wrap"
             style={{
-              width: 34,
-              height: 34,
-              borderRadius: 9,
-              background: `linear-gradient(135deg, ${ACCENT}, #c44e08)`,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#fff",
-              fontWeight: 800,
-              fontSize: 15,
-              flexShrink: 0,
+              padding: "18px 0",
+              borderBottom: "1px solid rgba(255,255,255,0.07)",
+              width: "100%",
             }}
           >
-            Q
-          </div>
-          <div className="qs-logo-text" style={{ marginLeft: 10 }}>
-            <p
+            <div
               style={{
-                margin: 0,
-                fontSize: 14,
-                fontWeight: 700,
-                color: "#f0eeff",
+                width: 34,
+                height: 34,
+                borderRadius: 9,
+                background: `linear-gradient(135deg, ${ACCENT}, #c44e08)`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                fontWeight: 800,
+                fontSize: 15,
+                flexShrink: 0,
               }}
             >
-              Quick Hire
-            </p>
-            <p
-              style={{
-                margin: 0,
-                fontSize: 9,
-                color: "rgba(255,255,255,0.25)",
-                letterSpacing: "0.06em",
-              }}
-            >
-              JOB ADMIN
-            </p>
+              Q
+            </div>
+            <div className="qs-logo-text" style={{ marginLeft: 10 }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: "#f0eeff",
+                }}
+              >
+                Quick Hire
+              </p>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 9,
+                  color: "rgba(255,255,255,0.25)",
+                  letterSpacing: "0.06em",
+                }}
+              >
+                JOB ADMIN
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Hamburger (sm only — opens drawer) */}
-        <div
-          style={{
-            padding: "10px 0 4px",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <button className="qs-hamburger" onClick={() => setDrawerOpen(true)}>
-            <IconMenu />
-          </button>
-        </div>
+          {/* Hamburger (sm only — opens drawer) */}
+          <div
+            style={{
+              padding: "10px 0 4px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              className="qs-hamburger"
+              onClick={() => setDrawerOpen(true)}
+            >
+              <IconMenu />
+            </button>
+          </div>
 
-        {/* Icon nav */}
-        <nav
-          style={{
-            flex: 1,
-            width: "100%",
-            padding: "4px 6px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
-          {navItems.map((item) => {
-            const isActive = pathname === item.path;
-            return (
-              <div key={item.path} className="qs-tip-wrap">
-                <Link
-                  href={item.path}
-                  style={{ width: "100%", textDecoration: "none" }}
-                >
-                  <div className={`qs-nav-item ${isActive ? "active" : ""}`}>
-                    <div className="qs-icon-box">{item.icon}</div>
-                    <span className="qs-label">{item.name}</span>
-                  </div>
-                </Link>
-                {/* Tooltip shown only on collapsed strip */}
-                <span className="qs-tooltip">{item.name}</span>
-              </div>
-            );
-          })}
-        </nav>
+          {/* Icon nav */}
+          <nav
+            style={{
+              flex: 1,
+              width: "100%",
+              padding: "4px 6px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            {navItems.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <div key={item.path} className="qs-tip-wrap">
+                  <Link
+                    href={item.path}
+                    style={{ width: "100%", textDecoration: "none" }}
+                  >
+                    <div className={`qs-nav-item ${isActive ? "active" : ""}`}>
+                      <div className="qs-icon-box">{item.icon}</div>
+                      <span className="qs-label">{item.name}</span>
+                    </div>
+                  </Link>
+                  {/* Tooltip shown only on collapsed strip */}
+                  <span className="qs-tooltip">{item.name}</span>
+                </div>
+              );
+            })}
+          </nav>
 
-        {/* Footer */}
-        <div
-          className="qs-footer-text"
-          style={{
-            padding: "12px 16px",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            fontSize: 10,
-            color: "rgba(255,255,255,0.2)",
-            width: "100%",
-          }}
-        >
-          © 2026 Admin Panel
-        </div>
-      </aside>
+          {/* Footer */}
+          <div
+            className="qs-footer-text"
+            style={{
+              padding: "12px 16px",
+              borderTop: "1px solid rgba(255,255,255,0.06)",
+              fontSize: 10,
+              color: "rgba(255,255,255,0.2)",
+              width: "100%",
+            }}
+          >
+            © 2026 Admin Panel
+          </div>
+        </aside>
+      </Link>
 
       {/* ══ Mobile Full Drawer (sm only) ══ */}
       <div
