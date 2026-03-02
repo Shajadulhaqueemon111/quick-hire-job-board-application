@@ -21,10 +21,10 @@ export default function JobSearchPage({
   setLocation,
   category,
   setCategory,
-  jobs,
+
+  jobs = [],
   onSearch,
 }: Props) {
-  // ✅ Internal draft state — parent state এ reflect হবে না যতক্ষণ Search না করা হয়
   const [draftKeyword, setDraftKeyword] = useState(keyword);
   const [draftLocation, setDraftLocation] = useState(location);
   const [draftCategory, setDraftCategory] = useState(category);
@@ -36,7 +36,6 @@ export default function JobSearchPage({
     new Set(jobs.map((job) => job.location).filter(Boolean)),
   );
 
-  // ✅ Search click করলে তখনই parent state update হবে
   const handleSearch = () => {
     setKeyword(draftKeyword);
     setLocation(draftLocation);
@@ -47,7 +46,6 @@ export default function JobSearchPage({
   return (
     <div className="w-full flex justify-center mb-10">
       <div className="flex flex-col md:flex-row items-stretch md:items-center w-full max-w-4xl bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden">
-        {/* 🔍 Keyword Input */}
         <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b md:border-b-0 md:border-r border-gray-200">
           <svg
             className="w-5 h-5 text-gray-400 flex-shrink-0"
@@ -66,8 +64,8 @@ export default function JobSearchPage({
             type="text"
             placeholder="Job title or keyword"
             className="w-full text-sm text-gray-700 placeholder-gray-400 outline-none bg-transparent"
-            value={draftKeyword} // ✅ draft use
-            onChange={(e) => setDraftKeyword(e.target.value)} // ✅ draft update
+            value={draftKeyword}
+            onChange={(e) => setDraftKeyword(e.target.value)}
           />
         </div>
 
@@ -88,8 +86,8 @@ export default function JobSearchPage({
           </svg>
           <select
             className="w-full text-sm text-gray-700 outline-none bg-transparent appearance-none cursor-pointer"
-            value={draftLocation} // ✅ draft use
-            onChange={(e) => setDraftLocation(e.target.value)} // ✅ draft update
+            value={draftLocation}
+            onChange={(e) => setDraftLocation(e.target.value)}
           >
             <option value="">All Locations</option>
             {locations.map((loc: any) => (
@@ -100,7 +98,7 @@ export default function JobSearchPage({
           </select>
         </div>
 
-        {/* 🗂️ Category Select */}
+        {/*  Category Select */}
         <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b md:border-b-0 md:border-r border-gray-200">
           <svg
             className="w-5 h-5 text-gray-400 flex-shrink-0"
@@ -117,8 +115,8 @@ export default function JobSearchPage({
           </svg>
           <select
             className="w-full text-sm text-gray-700 outline-none bg-transparent appearance-none cursor-pointer"
-            value={draftCategory} // ✅ draft use
-            onChange={(e) => setDraftCategory(e.target.value)} // ✅ draft update
+            value={draftCategory} //
+            onChange={(e) => setDraftCategory(e.target.value)} //
           >
             <option value="">All Categories</option>
             {categories.map((cat: any) => (
@@ -129,10 +127,9 @@ export default function JobSearchPage({
           </select>
         </div>
 
-        {/* 🔥 Search Button */}
         <div className="px-4 py-3 flex items-center justify-center">
           <button
-            onClick={handleSearch} // ✅ handleSearch call
+            onClick={handleSearch}
             className="w-full md:w-auto px-7 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition-colors whitespace-nowrap"
           >
             Search my job

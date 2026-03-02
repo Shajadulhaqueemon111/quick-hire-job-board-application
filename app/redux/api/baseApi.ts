@@ -1,12 +1,14 @@
-import { IApplication, IApplicationsResponse } from "@/app/types/applications";
+import { IApplicationsResponse } from "@/app/types/applications";
 import { IJob } from "@/app/types/jobs";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
+
   baseQuery: fetchBaseQuery({
     baseUrl:
       process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000/api/v1",
+    credentials: "include",
   }),
   tagTypes: ["Jobs", "Applications"],
   endpoints: (builder) => ({
@@ -18,7 +20,7 @@ export const baseApi = createApi({
       query: (id: string) => `/jobs/${id}`,
       providesTags: (result, error, id) => [{ type: "Jobs", id }],
     }),
-    // ✅ Add mutation to submit application
+    //  Add mutation to submit application
     submitApplication: builder.mutation({
       query: (applicationData: {
         jobId: string;

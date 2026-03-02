@@ -122,10 +122,9 @@ const navItems = [
     path: "/admin-dashboard/all-job-applications",
     icon: <IconUsers />,
   },
-  { name: "Statistics", path: "/admin-dashboard/stats", icon: <IconStats /> },
 ];
 
-const ACCENT = "#f97316"; // ← change accent color here
+const ACCENT = "#f97316";
 
 const Sidebar = () => {
   const pathname = usePathname();
