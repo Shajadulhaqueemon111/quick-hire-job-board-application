@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// ── Inline SVG Icons (no external deps needed) ───────────────
 const IconHome = () => (
   <svg
     width="20"
