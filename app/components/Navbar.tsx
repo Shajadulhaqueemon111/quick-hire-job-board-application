@@ -45,6 +45,12 @@ const Navbar = () => {
         {/* Desktop Auth Buttons */}
         <div className="hidden md:flex items-center gap-5">
           <Link
+            href="/admin-dashboard"
+            className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"
+          >
+            Admin
+          </Link>
+          <Link
             href="/login"
             className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"
           >
