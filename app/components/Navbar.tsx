@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-5">
           <Link
             href="/admin-dashboard"
-            className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"
+            className="inline-block bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-md hover:bg-blue-700 transition duration-200"
           >
             Admin
           </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
           <Link
-            href="comming-soon"
+            href="/job-list"
             className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"
           >
             Find Jobs
@@ -119,6 +119,12 @@ const Navbar = () => {
             Browse Companies
           </Link>
           <hr className="border-gray-100" />
+          <Link
+            href="/admin-dashboard"
+            className="inline-block bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-md hover:bg-blue-700 transition duration-200"
+          >
+            Admin
+          </Link>
           <Link
             href="/login"
             className="text-gray-600 text-sm font-medium hover:text-indigo-600 transition-colors duration-200"

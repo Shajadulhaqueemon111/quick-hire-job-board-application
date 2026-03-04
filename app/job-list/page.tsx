@@ -83,7 +83,7 @@ const JobList: React.FC = () => {
     );
 
   return (
-    <section className="w-full bg-white  px-6 md:px-16 py-12 md:py-16 h-screen">
+    <section className="w-full bg-white  px-6 md:px-16 py-12 md:py-16 min-h-screen">
       <JobSearchPage
         keyword={keyword}
         setKeyword={setKeyword}
@@ -94,7 +94,7 @@ const JobList: React.FC = () => {
         jobs={jobsArray}
       />
 
-      {/* 🔥 No Results Found UI */}
+      {/*  No Results Found UI */}
       {filteredJobs.length === 0 ? (
         <div className="flex flex-col items-center  justify-center py-20 text-center">
           <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-5">
@@ -131,7 +131,7 @@ const JobList: React.FC = () => {
           </button>
         </div>
       ) : (
-        // 🔥 Sunder Job Cards
+        //  Sunder Job Cards
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
           {filteredJobs.map((job) => (
             <Link
